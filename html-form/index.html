@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#8A2BE2">
+    <link rel="icon" type="image/png" href="static/images/favicon.ico">
+
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/script.js" defer></script>
+
+    <title>Onboarding Form | Luka Go 💰</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            <img src="static/images/logo.png" alt="Luka Go Logo" width="50" height="50" style="vertical-align: middle;">
+            Welcome to Luka Go
+        </h1>
+        <p>Complete your registration to start investing.</p>
+    </header>
+
+    <main>
+        <form id="fintechOnboardingForm" action="/api/v1/register" method="post" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>1. Personal Information</legend>
+
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="user_name" placeholder="E.g.: Anne M. Gonzalez" required
+                        minlength="3" maxlength="100">
+                </div>
+
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="user_email" placeholder="your.email@domain.com" required>
+                </div>
+
+                <div>
+                    <label for="birthDate">Date of Birth:</label>
+                    <input type="date" id="birthDate" name="user_dob" required>
+                </div>
+
+                <div>
+                    <label for="userPhone">Mobile Phone:</label>
+                    <input type="tel" id="userPhone" name="user_phone" placeholder="+14155552671"
+                        pattern="\+[0-9]{1,3}[0-9]{9,11}"
+                        title="Must include country code and number (e.g., +14155552671)" inputmode="tel">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Identity Verification (KYC)</legend>
+
+                <div>
+                    <label for="occupation">Occupation / Industry:</label>
+                    <input type="text" id="occupation" name="user_occupation" list="occupation_list">
+                    <datalist id="occupation_list">
+                        <option value="Technology">
+                        <option value="Finance">
+                        <option value="Healthcare">
+                        <option value="Education">
+                        <option value="Commerce">
+                        <option value="Freelancer">
+                    </datalist>
+                </div>
+
+                <div>
+                    <label for="kycDocument">Identity Document (PDF or JPG):</label>
+                    <input type="file" id="kycDocument" name="kyc_file" required
+                        accept="application/pdf, image/jpeg, image/png">
+                </div>
+
+                <div>
+                    <label for="userAddress">Primary Address:</label>
+                    <textarea id="userAddress" name="user_address" rows="4"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>3. Investment Profile</legend>
+
+                <div>
+                    <p>Risk Tolerance (select one):</p>
+                    <div>
+                        <input type="radio" id="riskLow" name="investment_risk" value="low" required>
+                        <label for="riskLow">Low (Conservative)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="riskMedium" name="investment_risk" value="medium">
+                        <label for="riskMedium">Medium (Moderate)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="riskHigh" name="investment_risk" value="high">
+                        <label for="riskHigh">High (Aggressive)</label>
+                    </div>
+                </div>
+
+                <div>
+                    <p>Investment Goals (select multiple):</p>
+                    <div>
+                        <input type="checkbox" id="goalGrowth" name="investment_goals[]" value="growth">
+                        <label for="goalGrowth">Long-term Growth</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="goalRetirement" name="investment_goals[]" value="retirement">
+                        <label for="goalRetirement">Retirement</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="goalIncome" name="investment_goals[]" value="income">
+                        <label for="goalIncome">Income Generation</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="initialInvestment">Initial Investment Amount (USD):</label>
+                    <input type="number" id="initialInvestment" name="investment_amount_usd" min="100" step="100"
+                        placeholder="1000" inputmode="decimal">
+                </div>
+
+                <div>
+                    <label for="investmentHorizon">Investment Horizon (Years):</label>
+                    <input type="range" id="investmentHorizon" name="investment_horizon_years" min="1" max="30" step="1"
+                        value="10">
+                    <output for="investmentHorizon" name="horizon_output_display">10</output> years
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Security &amp; Completion</legend>
+
+                <div>
+                    <label for="userPass">Create Password:</label>
+                    <input type="password" id="userPass" name="user_password" required minlength="12"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{12,}"
+                        title="Minimum 12 characters, 1 uppercase, 1 lowercase, 1 number, and 1 symbol."
+                        autocomplete="new-password">
+                </div>
+
+                <div>
+                    <label for="sourceOfFunds">Source of Funds:</label>
+                    <select id="sourceOfFunds" name="user_funds_source" required>
+                        <option value="" disabled selected>-- Please select an option --</option>
+                        <optgroup label="Earned Income">
+                            <option value="salary">Salary</option>
+                            <option value="services">Services / Fees</option>
+                        </optgroup>
+                        <optgroup label="Capital">
+                            <option value="savings">Savings</option>
+                            <option value="inheritance">Inheritance</option>
+                            <option value="other_investments">Other Investments</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <input type="hidden" name="csrf_token" value="aBC123XyZ-SecurityToken-987">
+
+                <div>
+                    <button type="submit">Create My Account</button>
+                    <button type="reset">Clear Form</button>
+                    <button type="submit" formaction="/api/v1/save-draft" formnovalidate>
+                        Save Draft (No Validation)
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+
+        <section>
+            <div>
+                <input type="checkbox" id="termsAndConditions" name="user_terms_agreed" value="true" required
+                    form="fintechOnboardingForm">
+                <label for="termsAndConditions">
+                    I have read and agree to the <a href="/terms">Terms and Conditions</a>.
+                </label>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Luka Go. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
