@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Luka Go — Open a digital account, request an express loan or start an investment plan.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Luka Go — Apply</title>
+  <link rel="canonical" href="https://lukago.com/">
+
+  <!-- Open Graph  -->
+  <meta property="og:title" content="Luka Go — Apply">
+  <meta property="og:description" content="Open a digital account, request a loan, or start investing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lukago.com/">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+  <header class="hero" role="banner">
+    <div class="brand" aria-label="Luka Go brand">
+      <img src="static/images/logo.png" alt="Luka Go logo" width="56" height="56">
+      <h1 class="hero-title">Luka Go</h1>
+    </div>
+
+    <p class="hero-subtitle">Open account • Request loan • Start investment</p>
+
+    <div class="actions" role="group" aria-label="Primary actions">
+      <a href="#apply" class="btn-primary" aria-label="Apply now">Apply now</a>
+      <a href="#products" class="btn-secondary" aria-label="Products">Products</a>
+    </div>
+  </header>
+
+  <nav class="topnav" aria-label="Primary navigation">
+    <ul>
+      <li><a href="#apply">Apply</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#trust">Trust</a></li>
+      <li><a href="#terms">Terms</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" role="main">
+    <section id="products" class="section" aria-labelledby="products-title">
+      <h2 id="products-title">Products</h2>
+
+      <article class="card product" aria-labelledby="account-title">
+        <h3 id="account-title">Digital Account</h3>
+        <p>Basic online bank account with virtual card and no monthly fee.</p>
+        <ul>
+          <li>Monthly fee: $0</li>
+          <li>Virtual card: Visa</li>
+          <li>Domestic transfers: free</li>
+        </ul>
+        <div class="actions">
+          <a href="#apply" class="btn-primary" aria-label="Apply for Digital Account">Apply</a>
+        </div>
+      </article>
+
+      <article class="card product" aria-labelledby="loan-title">
+        <h3 id="loan-title">Express Loan</h3>
+        <p>Short-term loan with clear rate and amount options.</p>
+        <ul>
+          <li>Rate from 1.2% monthly</li>
+          <li>Amount range: $500–$20,000</li>
+          <li>Decision time: minutes</li>
+        </ul>
+        <div class="actions">
+          <a href="#apply" class="btn-primary" aria-label="Request Express Loan">Request</a>
+        </div>
+      </article>
+
+      <article class="card product" aria-labelledby="invest-title">
+        <h3 id="invest-title">Smart Investment</h3>
+        <p>Indexed investment portfolios with minimum deposit.</p>
+        <ul>
+          <li>Minimum deposit: $100</li>
+          <li>Strategy: balanced index funds</li>
+          <li>Reporting: weekly summary</li>
+        </ul>
+        <div class="actions">
+          <a href="#apply" class="btn-primary" aria-label="Invest with Luka Go">Invest</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="how" class="section" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <ol>
+        <li>Apply: complete the form below and choose a product.</li>
+        <li>Verify: confirm identity and documents when requested.</li>
+        <li>Activate: receive product details and next steps by email.</li>
+      </ol>
+    </section>
+
+    <section id="trust" class="section" aria-labelledby="trust-title">
+      <h2 id="trust-title">Trust</h2>
+      <ul>
+        <li>Encryption in transit</li>
+        <li>Minimal data collection for application</li>
+        <li>Product eligibility may vary by jurisdiction</li>
+      </ul>
+    </section>
+
+    <section id="apply" class="section" aria-labelledby="apply-title">
+      <h2 id="apply-title">Application form</h2>
+      <p>Fill only required fields; we will contact you for verification.</p>
+
+      <form id="luka-apply" action="/api/v1/apply" method="post" novalidate>
+        <fieldset class="card">
+          <legend>Applicant details</legend>
+
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="full_name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" aria-describedby="phone-help">
+            <small id="phone-help">Include country code if outside Chile.</small>
+          </div>
+
+          <div class="field">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" list="country_list" required>
+            <datalist id="country_list">
+              <option value="Chile">
+              <option value="Argentina">
+              <option value="Peru">
+              <option value="Mexico">
+            </datalist>
+          </div>
+
+          <div class="field">
+            <label for="product">Product</label>
+            <input type="text" id="product" name="product" list="product_list" required>
+            <datalist id="product_list">
+              <option value="Digital Account">
+              <option value="Express Loan">
+              <option value="Smart Investment">
+            </datalist>
+          </div>
+
+          <div class="field">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" name="notes" rows="4" cols="40"></textarea>
+          </div>
+
+          <input type="hidden" name="csrf_token" value="lukago-demo-token-2025">
+
+          <div class="field">
+            <input type="checkbox" id="acceptTerms" name="accept_terms" required>
+            <label for="acceptTerms">I accept the Terms and Privacy Notice</label>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Submit application</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="terms" class="section" aria-labelledby="terms-title">
+      <h2 id="terms-title">Terms & conditions</h2>
+      <p>Read product terms and privacy notice before applying.</p>
+      <p><a href="#" rel="noopener">Full terms</a></p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; <time datetime="2025">2025</time> Luka Go — Chile</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
