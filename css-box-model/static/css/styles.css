@@ -1,0 +1,298 @@
+/* --- Root Variables --- */
+:root {
+    --bg: #f8f8f8;
+    --surface: #ffffff;
+    --brand: #0A2540;
+    --brand-dark: #07192e;
+    --accent: #B8860B;
+    --cta-primary: var(--brand);
+    --cta-primary-hover: var(--brand-dark);
+    --cta-secondary: #e0e0e0;
+    --cta-secondary-text: var(--brand);
+    --text-primary: #111111;
+    --text-muted: #5a5a5a;
+    --link-color: var(--brand);
+    --error: #B00020;
+    --card-max: 980px;
+    --content-pad: 1.25rem;
+}
+
+/* --- Box Model Reset --- */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* --- Typography & Base Colors --- */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.45;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+/* --- Page Layout Container --- */
+main {
+    max-width: var(--card-max);
+    margin: 0 auto;
+    padding: var(--content-pad);
+}
+
+/* --- Hero Section --- */
+header.hero {
+    background-color: var(--surface);
+    border-bottom: 2px solid rgba(10, 10, 10, 0.06);
+    padding: 2rem 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.brand {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    padding: 0;
+}
+
+.brand img {
+    width: 56px;
+    height: 56px;
+    margin-right: 0.75rem;
+    border: 1px solid var(--brand);
+}
+
+.hero-title {
+    margin: 0;
+    font-size: 1.75rem;
+    color: var(--brand);
+    font-style: normal;
+}
+
+.hero-subtitle {
+    margin: 0.5rem auto 1rem;
+    color: var(--text-muted);
+    max-width: 720px;
+}
+
+/* --- Hero CTAs --- */
+header .actions {
+    margin-top: 0.5rem;
+}
+
+header .actions a {
+    padding: 0.55rem 0.9rem;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--cta-primary);
+    color: #fff;
+    border-color: var(--cta-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--cta-primary-hover);
+    border-color: var(--cta-primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--cta-secondary);
+    color: var(--cta-secondary-text);
+    border-color: var(--cta-secondary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* --- Top Navigation --- */
+.topnav {
+    background-color: transparent;
+    padding: 0.5rem 1rem 1rem;
+    text-align: center;
+}
+
+.topnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.topnav li {
+    display: inline;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.topnav a {
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.topnav a:hover {
+    color: var(--accent);
+}
+
+/* --- Section Titles & Cards --- */
+.section h2 {
+    font-size: 1.75rem;
+    color: var(--brand);
+    margin: 0 0 1rem 0;
+}
+
+.card {
+    background-color: var(--surface);
+    border: 1px solid rgba(10, 10, 10, 0.06);
+    padding: var(--content-pad);
+    margin: 1rem auto;
+    max-width: 100%;
+}
+
+.card+.card {
+    margin-top: 0.75rem;
+}
+
+.card h3 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.2rem;
+    color: var(--brand);
+}
+
+.card p {
+    margin: 0 0 0.6rem 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+/* Card Lists */
+.card ul {
+    list-style: none;
+    margin: 0 0 0.75rem 0;
+    padding-left: 0;
+    color: var(--text-muted);
+}
+
+.card ul li {
+    margin: 0.25rem 0;
+    padding-left: 1.5rem;
+}
+
+.card .actions {
+    margin-top: 0.5rem;
+}
+
+.card .actions a {
+    padding: 0.45rem 0.75rem;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.card .actions .btn-primary {
+    background-color: var(--cta-primary);
+    color: #fff;
+    border-color: var(--cta-primary);
+}
+
+.card .actions .btn-primary:hover {
+    background-color: var(--cta-primary-hover);
+    border-color: var(--cta-primary-hover);
+}
+
+.card .actions .btn-secondary {
+    background-color: transparent;
+    color: var(--brand);
+    border: 1px solid rgba(10, 10, 10, 0.08);
+}
+
+.card .actions .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* --- Application Form --- */
+fieldset.card {
+    padding: 1.5rem;
+    border: 1px solid rgba(10, 10, 10, 0.08);
+}
+
+fieldset.card legend {
+    font-weight: 700;
+    color: var(--accent);
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
+    background-color: var(--surface);
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(10, 10, 10, 0.12);
+    background-color: #fff;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.actions button[type="submit"] {
+    background-color: var(--cta-primary);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    font-weight: 700;
+}
+
+.actions button[type="submit"]:hover {
+    background-color: var(--cta-primary-hover);
+}
+
+/* --- Footer --- */
+footer[role="contentinfo"] {
+    text-align: center;
+    padding: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.06);
+}
+
+footer a {
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+footer li {
+    list-style-type: none;
+    display: inline;
+    margin-left: 1rem;
+}
