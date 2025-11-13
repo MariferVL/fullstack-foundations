@@ -1,16 +1,12 @@
-    /* Minimal, accessible, and portable styles */
     :root {
         --bg: #0f1221;
         --panel: #171a2a;
         --text: #e6e9f2;
         --muted: #aab1c5;
         --brand: #67c587;
-        /* organic prosperity */
         --brand-2: #6aa7ff;
-        /* trust */
         --border: #2a3047;
         --focus: #ffd166;
-        /* visible focus */
     }
 
     * {
@@ -161,7 +157,6 @@
         border-radius: 4px;
     }
 
-    /* Print-safe */
     @media print {
 
         nav,
