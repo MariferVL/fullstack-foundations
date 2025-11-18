@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    
+
     <!-- SEO + accessibility metadata -->
     <meta name="description" content="Luka Go — Client profile dashboard for digital accounts, loans, and investments.">
     <meta name="theme-color" content="#0A0A2A">
@@ -47,7 +47,11 @@
         <section class="profile-card" aria-label="Client profile summary">
             <img src="static/images/avatar/avatar-client3.png" alt="Profile photo of Luka Go client">
             <h2>Aisha C.</h2>
-            <p>Digital Account · Gold Level</p>
+            <p class="account-level">Digital Account · Gold Level</p>
+            <p class="location">📍 Viña del Mar, Chile</p>
+            <p class="bio">UX/UI Designer · Frontend Developer · Nature lover</p>
+            <p class="description">Passionate about crafting beautiful and functional digital experiences...</p>
+            <a href="#" class="edit-profile">Edit profile</a>
         </section>
 
         <!-- Products -->
@@ -69,8 +73,62 @@
                 <li>Next payment: Nov 25, 2025</li>
             </ul>
         </section>
-    </main>
 
+        <!-- Education -->
+        <section class="section" aria-labelledby="education-heading">
+            <h3 id="education-heading">Education</h3>
+            <ul>
+                <li>Coding Dojo – Full Stack Bootcamp</li>
+                <li>Dec 2019 – Mar 2020</li>
+                <li>Triple black belt in Python, MERN, and C#</li>
+            </ul>
+        </section>
+
+        <!-- Connection Requests -->
+        <section class="section" aria-labelledby="requests-heading">
+            <h3 id="requests-heading">Connection Requests</h3>
+            <ul class="connections">
+                <li>
+                    <img src="static/images/avatar/avatar-client4.png" alt="Carlos M. profile photo">
+                    <div>
+                        <strong>Javier M.</strong><br>
+                        <span>Fintech Product Manager</span>
+                    </div>
+                    <button class="connect-btn">Accept</button>
+                </li>
+                <li>
+                    <img src="static/images/avatar/avatar-client2.png" alt="Fernanda V. profile photo">
+                    <div>
+                        <strong>Fernanda V.</strong><br>
+                        <span>UX Researcher</span>
+                    </div>
+                    <button class="connect-btn">Accept</button>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Trusted Network -->
+        <section class="section" aria-labelledby="network-heading">
+            <h3 id="network-heading">Trusted Network</h3>
+            <ul class="network">
+                <li>
+                    <img src="static/images/avatar/avatar-client5.png" alt="Diego A. profile photo">
+                    <div>
+                        <strong>Diego A.</strong><br>
+                        <span>Investment Advisor · Verified Partner</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="static/images/avatar/avatar-client1.png" alt="Camila T. profile photo">
+                    <div>
+                        <strong>Camila T.</strong><br>
+                        <span>Legal Compliance · Internal Contact</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </main>
 
 </body>
 

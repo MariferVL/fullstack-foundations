@@ -3,7 +3,7 @@
     --gold: #C8B560;
     --bg: #FFFFFF;
     --radius: 1rem;
-    --shadow: 0 6px 24px rgba(0,0,0,0.12);
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
     color-scheme: light dark;
 }
 
@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 header h1 {
@@ -30,11 +30,10 @@ header h1 {
     font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
-/* Navigation styling */
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;              
+    gap: 2rem;
     margin: 0;
     padding: 0;
 }
@@ -43,15 +42,14 @@ header nav a {
     color: var(--gold);
     text-decoration: none;
     font-weight: 600;
-    padding: 0.25rem 0;    
+    padding: 0.25rem 0;
     transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
 header nav a:hover {
     color: white;
-    border-bottom: 2px solid var(--gold); 
+    border-bottom: 2px solid var(--gold);
 }
-
 
 /* Main layout */
 main {
@@ -72,7 +70,7 @@ main {
     box-shadow: var(--shadow);
     display: grid;
     place-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .profile-card img {
@@ -86,12 +84,47 @@ main {
 .profile-card h2 {
     margin: 0;
     font-size: clamp(1.6rem, 3vw, 2rem);
+    color: white;
 }
 
-.profile-card p {
-    margin: 0;
-    font-size: 1rem;
+.profile-card .account-level {
+    background: rgba(200,181,96,0.15);
     color: var(--gold);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.bio {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #eee;
+    max-width: 600px;
+}
+
+.edit-profile {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.edit-profile:hover {
+    background: #e6d98c;
 }
 
 /* Section cards */
@@ -109,8 +142,92 @@ main {
     color: var(--navy);
 }
 
+.section ul {
+    padding-left: 1rem;
+}
+
 .section li {
     margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Connection Requests */
+.connections {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.connections li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.connections img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+}
+
+.connections div {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--navy);
+}
+
+.connect-btn {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.connect-btn:hover {
+    background: #e6d98c;
+}
+
+/* Trusted Network */
+.network {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.network li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.network img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+}
+
+.network div {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--navy);
 }
 
 /* Mobile */
