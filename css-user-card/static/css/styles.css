@@ -1,0 +1,89 @@
+:root {
+    color-scheme: light dark;
+    --navy: #0a0a2a;
+    --gold: #c8b560;
+    --bg: #f2f4f8;
+    --radius: 1rem;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    accent-color: var(--gold);
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+}
+
+.user-card {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    width: min(90vw, 360px);
+    transition: transform 0.3s ease;
+}
+
+
+.user-card:hover {
+    transform: translateY(-4px);
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    justify-self: center;
+}
+
+.user-card h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    text-align: center;
+    color: var(--navy);
+}
+
+.user-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #555;
+}
+
+.status {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--gold);              
+    background: transparent;         
+    border: 1px solid var(--gold);  
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;            
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cta {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    height: 3rem;
+    width: 11rem;
+}
+
+.cta:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
