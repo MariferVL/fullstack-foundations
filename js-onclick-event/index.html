@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Luka Go — Glossary</title>
+
+    <!-- SEO and Open Graph metadata -->
+    <meta name="description" content="Collaborative fintech glossary for Luka Go clients.">
+    <meta property="og:title" content="Luka Go — Glossary">
+    <meta property="og:description" content="Define and explore fintech terms interactively.">
+    <meta property="og:image" content="static/images/meta/android-chrome-512x512.png">
+
+    <!-- Favicons -->
+    <link rel="icon" href="static/images/meta/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/meta/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="static/images/meta/apple-touch-icon.png">
+
+    <!-- External styles and JS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header with brand, nav and login toggle -->
+    <header>
+        <div class="brand" aria-label="Luka Go brand">
+            <img src="static/images/logo.png" alt="Luka Go logo" width="56" height="56">
+            <h1>Luka Go</h1>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+        <button id="login-btn" type="button">Sign in</button>
+    </header>
+
+    <main>
+        <!-- Glossary section with interactive definitions -->
+        <section class="section" aria-labelledby="glossary-heading">
+            <h2 id="glossary-heading">Glossary: Defined by You</h2>
+
+            <button id="add-btn" type="button" class="btn">Add Definition</button>
+
+            <article class="definition">
+                <h3>Digital Wallet</h3>
+                <p>A secure app that stores payment methods and enables fast transactions without physical cards.</p>
+                <button class="like-btn" type="button" data-title="Digital Wallet">Like</button>
+                <span class="like-count">0</span>
+            </article>
+
+            <article class="definition">
+                <h3>Microloan</h3>
+                <p>A small loan offered to individuals or small businesses, often with flexible terms and fast approval.
+                </p>
+                <button class="like-btn" type="button" data-title="Microloan">Like</button>
+                <span class="like-count">0</span>
+            </article>
+        </section>
+    </main>
+
+    <!-- Modal: opened on like, closed with OK, Esc, or overlay click -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content" role="document">
+            <h2 id="modal-title">Liked</h2>
+            <p id="modal-message">Placeholder</p>
+            <button id="modal-close" type="button" class="btn">OK</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
