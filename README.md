@@ -1,12 +1,12 @@
-# Frontend Foundations
+# Fullstack Foundations
 
-**A curated collection of microprojects to revisit and reinforce core frontend concepts — with real-world fintech context.**
+**A curated collection of microprojects to revisit and reinforce core fullstack concepts — with real-world context.**
 
 ---
 
 ## 🎯 Purpose
 
-This repository is designed as a personal learning base and a public resource for anyone starting their journey in frontend development. Each project focuses on a specific HTML, CSS, or JavaScript concept, implemented through small, standalone exercises inspired by fintech scenarios — making the learning process both practical and relevant.
+This repository is designed as a personal learning base and a public resource for anyone starting their journey in fullstack development. Each project focuses on a specific HTML, CSS, or JavaScript concept, implemented through small, standalone exercises inspired by fintech scenarios — making the learning process both practical and relevant.
 
 Whether you're reviewing fundamentals, onboarding new developers, or mentoring beginners, this repo offers a structured and contextualized way to explore the building blocks of the web.
 
